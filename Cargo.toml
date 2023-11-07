@@ -1,0 +1,26 @@
+[package]
+    name    = "dioxus-bug"
+    version = "0.1.0"
+    edition = "2021"
+
+    # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+    axum = "0.6.20"
+    # dioxus-router = { git = "https://github.com/DioxusLabs/dioxus", rev = "42faecf", features = [
+    #     "liveview",
+    # ] }
+    dioxus-router = { path = "../dioxus/packages/router/", features = [
+        "liveview",
+    ] }
+
+    # dioxus = { git = "https://github.com/DioxusLabs/dioxus", rev = "42faecf" }
+    # dioxus-liveview = { git = "https://github.com/DioxusLabs/dioxus", rev = "42faecf", features = [
+    #     "axum",
+    # ] }
+    dioxus = { path = "../dioxus/packages/dioxus/" }
+    dioxus-liveview = { path = "../dioxus/packages/liveview/", features = [
+        "axum",
+    ] }
+
+    tokio = { version = "1.33.0", features = ["full"] }
